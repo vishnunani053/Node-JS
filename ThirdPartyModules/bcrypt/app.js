@@ -1,24 +1,43 @@
-const bcrypt = require('bcrypt')
+/* let bcrypt = require('bcrypt')
 
-let users = {
-    id:102,
-    name:"rahul",
-    password:"hhjgj"
+let users={
+    id:101,
+    uName:"rahul",
+    password:"vishnu"
 }
 
-let salt = bcrypt.genSaltSync(10)
+let salt=bcrypt.genSaltSync(10)
 
-let newPassword = bcrypt.hashSync(users.password, salt)
+let newPassword=bcrypt.hashSync('vishnu',salt)
+console.log(newPassword)
+console.log(users.password)
 
-console.log(users.password);
-console.log(newPassword);
-
-let flag = bcrypt.compareSync("hhjgj", newPassword)
+let flag=bcrypt.compareSync("vishnu",newPassword)
 console.log(flag)
-
 if(flag){
-    console.log("login successfully")
+    console.log('login sucess')
+}else{
+    console.log('failure');
+}  */
+
+const bcrypt=require('bcrypt')
+
+let users={
+    id:101,
+    name:"sonia",
+    password:"president"
 }
-else{
-    console.log("login failed")
+
+let salt=bcrypt.genSaltSync(10)
+
+// hashSync means unreadble format
+let newPassword=bcrypt.hashSync("president",salt)
+console.log(newPassword)
+console.log(users.password)
+let flag=bcrypt.compareSync("president",newPassword)
+console.log(flag);
+if(flag){
+    console.log("login sucessfull");
+}else{
+    console.log("login error");
 }

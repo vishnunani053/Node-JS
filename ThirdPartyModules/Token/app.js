@@ -1,29 +1,45 @@
-// npm i json webtoken
-// creating token ( to create token we need unique value ie user id)
+/* 
 const jwt = require('jsonwebtoken')
 
-//user data
-let user ={
-    id:102,
-    userName:"vishnuNani",
-    email:"nani@gmail.com",
-    password:"565445564"
+let users={
+    id:101,
+    name:"rahul",
+    email:"rahul@gmail.com",
+    password:6548975
 }
 
-// payload means data
-let payload = {
-    id:user.id,
-    userName:user.userName,
-    email:user.email
+let payload={
+    id:users.id,
+    email:users.email
 }
 
-let secretKey="20010107DOB"
+let secretKey='07012001DOB'
 
-// creating token
-let token = jwt.sign(payload, secretKey, {expiresIn:60000})
+let token=jwt.sign(payload,secretKey,{expiresIn:30000})
+console.log(token);
+
+let user_Id=jwt.verify(token,secretKey)
+console.log(user_Id); */
+
+
+const jwt=require('jsonwebtoken')
+
+let users={
+    id:101,
+    name:'rahul',
+    email:'rahul@gmail.com',
+    password:4466565598989
+}
+ 
+let payload={
+    userId:users.id,
+    userPassword:users.password
+} 
+
+let secretKey='07012001DOB'
+
+let token=jwt.sign(payload,secretKey,{expiresIn:300000})
 console.log(token)
 
- // once we create token ..based on token only we can verify user details
- //verify user details
-let user_Id = jwt.verify(token, secretKey)
-console.log(user_Id)
+let user_Id=jwt.verify(token,secretKey)
+console.log(user_Id);

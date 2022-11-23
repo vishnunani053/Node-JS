@@ -1,8 +1,7 @@
+const fs=require('fs')
 
-
-const fs = require('fs')
-
-fs.readFile("data.json", "utf-8", (err, data)=>{
+let data=fs.readFile('data.json',"utf-8",(err,data)=>{
     if(err) throw err
-    console.log(JSON.parse(data))
+   // console.log(JSON.stringify(data) )
+    console.log(JSON.parse(data) )
 })
