@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/user', (req, res) => {
-    res.send("my express app is working sucessfully")
+    res.send("my express app is working sucessfully...")
 })
 app.listen(PORT, (err) => {
     if (err) throw err
