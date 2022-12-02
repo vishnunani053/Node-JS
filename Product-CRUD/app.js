@@ -89,7 +89,7 @@ import morgan from "morgan"
 import mongoose from "mongoose"
 import chalk from "chalk"
 import cors from "cors"
-import productRouter from "./product/productRouter.js"
+import productRouter from "./router/productRouter.js"
 
 const app=express()
 
@@ -119,5 +119,5 @@ process.exit(1)
 })
 
  app.listen(port, ()=>{
-    console.log(chalk.magentaBright(`server is running on..http://${hostName}:${port}`));
+    console.log(chalk.magentaBright(`server is running on..http://localhost:${port}`));
  })
