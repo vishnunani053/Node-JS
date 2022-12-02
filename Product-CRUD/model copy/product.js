@@ -1,5 +1,4 @@
 import mongoose from "mongoose"
-
 let productSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -13,7 +12,6 @@ let productSchema = new mongoose.Schema({
         type: Number,
         require: true
     }
-    
 })
-let productModel=mongoose.model("product",productSchema)
+let productModel = mongoose.model("product", productSchema)
 export default productModel
