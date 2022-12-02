@@ -104,19 +104,20 @@ app.use(express.urlencoded({extended:false}))
 app.get('/',(request,response)=>{
 response.send('<h1>welcome to node js</h1>')
 })
-app.use('product',productRouter)
+app.use('/product',productRouter)
 
 const port=process.env.PORT
 const hostName=process.env.HOST_NAME
 const mongoUrl=process.env.MONGO_DB_LOCAL_URL
 mongoose.connect(mongoUrl)
-.then((request,response)=>{
+.then((response)=>{
 console.log("mongo db connected sucessfully")
 })
 .catch((err)=>{
 console.log(err);
 process.exit(1)
 })
- app.listen(port,()=>{
-    console.log(chalk.magentaBright(` server is running on..http://localhost:${port}`));
+
+ app.listen(port, ()=>{
+    console.log(chalk.magentaBright(`server is running on..http://${hostName}:${port}`));
  })

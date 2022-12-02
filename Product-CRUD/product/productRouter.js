@@ -37,14 +37,14 @@ export default router  */
 import express, { Router } from "express"
 
 const router = express.Router()
-router.post('/create', async (request, response) => {
+router.post("/create", async (request, response) => {
     try {
         let product = {
             name: request.body.name,
-            price: request.price.name,
+            price: request.body.price,
             qty: request.body.qty
         }
-        let x = await
+      await response.send(product)
             console.log(product)
     } catch (err) {
 
